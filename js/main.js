@@ -18,8 +18,8 @@ let board = [
   [0, 0, 0, 0, 0, 0, 0],
 ];
 
-let currentPlayer = 'red';
-let currentValue = 'Y';
+let currentPlayer = 'blue';
+let currentValue = 'X';
 let playMode = 'HUMAN';
 let gameMode = 'HUMAN';
 const winString1 = 'XXXX';
@@ -77,8 +77,7 @@ function nextMoveOptions(board) {
   return nextMoves;
 }
 function checkPlayMode(event, iPos, jPos) {
-  debugger
-  console.log(currentPlayer, currentValue, gameMode, playMode);
+
   if (playMode === 'AI') {
     startTurnAI();
   } else {
@@ -225,7 +224,7 @@ function horizontalWin(str1, str2, isEndGame, len) {
 function endGame() {
   console.log('win');
   setTimeout(() => {
-    document.querySelector(".win-text").innerText = "AI wins!";
+    document.querySelector(".win-text").innerText = "Winner!";
     document.querySelector(".win").style = "block";
     document.querySelector(".circle-box").style.display = "none";
   }, 2000);
@@ -278,13 +277,13 @@ function startTurnAI() {
   let hasWinPatterns = false;
 
   // Control the center moves
-  if (board[5][3]) {
+  if ((board[5][3]) == '0') {
     board[5][3] = currentValue;
     updateBoard(5, 3);
-  } else if (board[5][4]) {
+  } else if ((board[5][4]) == '0') {
     board[5][4] = currentValue;
     updateBoard(5, 4);
-  } else if (board[5][2]) {
+  } else if ((board[5][2]) == '0') {
     board[5][2] = currentValue;
     updateBoard(5, 2);
   } else {
