@@ -18,10 +18,10 @@ let board = [
   [0, 0, 0, 0, 0, 0, 0],
 ];
 
-let currentPlayer = 'blue';
-let currentValue = 'X';
-let playMode = 'AI';//'HUMAN';
-let gameMode = 'AI';//'HUMAN';
+let currentPlayer = 'red';
+let currentValue = 'Y';
+let playMode = 'HUMAN';
+let gameMode = 'HUMAN';
 const winString1 = 'XXXX';
 const winString2 = 'YYYY';
 let moveCount = 1;
