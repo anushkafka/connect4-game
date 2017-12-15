@@ -20,8 +20,8 @@ let board = [
 
 let currentPlayer = 'blue';
 let currentValue = 'X';
-let playMode = 'HUMAN';
-let gameMode = 'HUMAN';
+let playMode = 'AI';//'HUMAN';
+let gameMode = 'AI';//'HUMAN';
 const winString1 = 'XXXX';
 const winString2 = 'YYYY';
 let moveCount = 1;
