@@ -18,10 +18,15 @@ let board = [
   [0, 0, 0, 0, 0, 0, 0],
 ];
 
-let currentPlayer = 'red';
-let currentValue = 'Y';
-let playMode = 'HUMAN';
-let gameMode = 'HUMAN';
+// let currentPlayer = 'red';
+// let currentValue = 'Y';
+// let playMode = 'HUMAN';
+// let gameMode = 'HUMAN';
+let currentPlayer = '';
+let currentValue = '';
+let playMode = '';
+let gameMode = '';
+
 const winString1 = 'XXXX';
 const winString2 = 'YYYY';
 let moveCount = 1;
@@ -29,13 +34,13 @@ let boardCopy = [];
 let iComp = 0;
 let jComp = 0;
 
-// function setInitValues(currentPlayer, currentValue, gameMode, playMode) {
-//   console.log(currentPlayer, currentValue, gameMode, playMode);
-//   currentPlayer = currentPlayer;
-//   currentValue = currentValue;
-//   gameMode = gameMode;
-//   playMode = playMode;
-// }
+function setInitValues(currentPlayer1, currentValue1, gameMode1, playMode1) {
+  currentPlayer = currentPlayer1;
+  currentValue = currentValue1;
+  gameMode = gameMode1;
+  playMode = playMode1;
+  //console.log(currentPlayer, currentValue, gameMode, playMode);
+}
 
 function nextMoveOptions(board) {
   let nextMoves = [];
@@ -77,7 +82,6 @@ function nextMoveOptions(board) {
   return nextMoves;
 }
 function checkPlayMode(event, iPos, jPos) {
-
   if (playMode === 'AI') {
     startTurnAI();
   } else {
@@ -382,25 +386,31 @@ function recall() {
   // }
 }
 
-generateBoard();
+
 
 // application start
-
+generateBoard();
 // hide the board
 document.querySelector(".circle-box").style.display = "none";
 
 document.querySelector(".against-ai").addEventListener("click", () => {
   document.querySelector(".player-choice").style.display = "none";
   document.querySelector(".circle-box").style.display = "block";
-  //setInitValues('blue', 'X', 'AI', 'AI');
+  setInitValues('blue', 'X', 'AI', 'AI');
 });
 
 document.querySelector(".against-player").addEventListener("click", () => {
   document.querySelector(".player-choice").style.display = "none";
   document.querySelector(".circle-box").style.display = "block";
-  //setInitValues('red', 'Y', 'HUMAN', 'HUMAN');
+  setInitValues('red', 'Y', 'HUMAN', 'HUMAN');
 
 });
 document.querySelector(".try-again").addEventListener("click", () => {
   window.location.reload();
 });
+
+
+// var re1 = new RegExp('[X ][X ][0-9 ][X ]')
+// array = ['12', 'X', 'X', '31', 'X', '40']
+// str = array.join(' ')
+// re1.exec(str)

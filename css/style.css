@@ -62,7 +62,7 @@ body {
   -webkit-border-radius: 25px;
   -moz-border-radius: 25px;
   border-radius: 25px;
-  background: #197278;
+  background: #348fd5;
   border: 1px solid black;
 }
 .choice {
@@ -83,7 +83,7 @@ body {
   color: #C44536;
 }
 .against-ai {
-  color: #197278;
+  color: #348fd5;
 }
 .win {
   font-family: 'Alfa Slab One', cursive;
